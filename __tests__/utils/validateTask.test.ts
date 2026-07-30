@@ -34,4 +34,20 @@ describe('validateTaskTitle', () => {
       expect(validateTaskTitle(titulo101)).toBe('El título no puede exceder los 100 caracteres');
     });
   });
+
+  // ==== Actividad 2: pruebas agregadas — cubrir valores null/undefined, no probados arriba ====
+  describe('casos límite adicionales (Actividad 2)', () => {
+    it('retorna el mensaje de obligatoriedad cuando el título es null', () => {
+      expect(validateTaskTitle(null as unknown as string)).toBe('El título es obligatorio');
+    });
+
+    it('retorna el mensaje de obligatoriedad cuando el título es undefined', () => {
+      expect(validateTaskTitle(undefined as unknown as string)).toBe('El título es obligatorio');
+    });
+
+    it('el mensaje de error por longitud mínima contiene la palabra "caracteres"', () => {
+      const mensaje = validateTaskTitle('  A  ');
+      expect(mensaje).toContain('caracteres');
+    });
+  });
 });

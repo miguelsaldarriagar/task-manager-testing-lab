@@ -2,7 +2,7 @@ import { renderHook, act } from '@testing-library/react-native';
 import { useCreateTask } from '../../src/hooks/useCreateTask';
 import * as taskService from '../../src/services/taskService';
 
-// Actividad 2 - Punto 3: pruebas del hook useCreateTask.
+// ==== Actividad 2: pruebas agregadas — hook useCreateTask ====
 // Se aísla taskService con jest.mock() porque createTask() representa la
 // comunicación con una API externa; mockearlo evita depender de una red real,
 // vuelve las pruebas deterministas y permite forzar escenarios de éxito y error.

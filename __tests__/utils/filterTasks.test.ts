@@ -29,4 +29,20 @@ describe('filterTasksByStatus', () => {
     // @ts-expect-error probando entrada inválida en runtime
     expect(() => filterTasksByStatus(mockTasks, 'invalido')).toThrow();
   });
+
+  // ==== Actividad 2: pruebas agregadas — cubrir lista vacía, lista null y matcher toContain ====
+  describe('casos límite adicionales (Actividad 2)', () => {
+    it('retorna un arreglo vacío cuando se filtra una lista vacía', () => {
+      expect(filterTasksByStatus([], 'pending')).toEqual([]);
+    });
+
+    it('lanza un error cuando la lista de tareas es null', () => {
+      expect(() => filterTasksByStatus(null as unknown as Task[], 'pending')).toThrow();
+    });
+
+    it('el resultado filtrado por "pending" contiene el título esperado', () => {
+      const titulos = filterTasksByStatus(mockTasks, 'pending').map((t) => t.title);
+      expect(titulos).toContain('Hacer ejercicio');
+    });
+  });
 });
