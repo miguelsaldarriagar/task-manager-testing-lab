@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react-native';
+import { render, screen, fireEvent } from '@testing-library/react-native';
 import { TaskList } from '../../src/components/TaskList';
 
 const mockTask = { id: '1', title: 'Tarea 1', status: 'pending' as const };
@@ -19,5 +19,24 @@ describe('TaskList', () => {
   it('muestra el contador de tareas correctamente', async () => {
     await render(<TaskList tasks={[mockTask, anotherTask]} />);
     expect(screen.getByText('2 tareas')).toBeTruthy();
+  });
+
+  // ==== Actividad 2: pruebas agregadas — estado condicional singular/plural y delegación de onDelete ====
+  it('muestra el contador en singular cuando hay una sola tarea', async () => {
+    await render(<TaskList tasks={[mockTask]} />);
+    expect(screen.getByText('1 tarea')).toBeTruthy();
+  });
+
+  it('llama a onDelete con el id de la tarea al presionar "Eliminar"', async () => {
+    // jest.fn() aísla TaskList de su componente padre real: solo interesa
+    // verificar que la interacción del usuario dispara la función correcta,
+    // sin depender de la lógica real de eliminación de tareas.
+    const onDelete = jest.fn();
+    await render(<TaskList tasks={[mockTask, anotherTask]} onDelete={onDelete} />);
+
+    const botonesEliminar = screen.getAllByText('Eliminar');
+    await fireEvent.press(botonesEliminar[0]);
+
+    expect(onDelete).toHaveBeenCalledWith('1');
   });
 });
