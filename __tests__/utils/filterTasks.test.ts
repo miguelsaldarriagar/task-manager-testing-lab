@@ -43,6 +43,14 @@ describe('filterTasksByStatus', () => {
     it('el resultado filtrado por "pending" contiene el título esperado', () => {
       const titulos = filterTasksByStatus(mockTasks, 'pending').map((t) => t.title);
       expect(titulos).toContain('Hacer ejercicio');
+
     });
+it('lanza un error cuando el estado es undefined', () => {
+  // Caso límite adicional: igual que con el estado 'invalido', un estado
+  // undefined tampoco está en la lista de estados válidos y debe lanzar
+  // un error explícito en vez de comportarse de forma silenciosa.
+  // @ts-expect-error probando entrada inválida en runtime
+  expect(() => filterTasksByStatus(mockTasks, undefined)).toThrow();
+});
   });
 });
