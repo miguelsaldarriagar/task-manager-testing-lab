@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/components/TaskCard.tsx</title>
+    <title>Code coverage report for src/screens/SearchTaskScreen.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/components</a> TaskCard.tsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/screens</a> SearchTaskScreen.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -95,7 +95,27 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -105,8 +125,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -117,45 +135,51 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { Task } from '../types';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// ==== Actividad 3: pantalla nueva para pruebas de integración ====
+import React from 'react';
+import { View, Text, FlatList } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { SearchBar } from '../components/SearchBar';
+import { SearchResultCard } from '../components/SearchResultCard';
+import { useSearchTasks } from '../hooks/useSearchTasks';
 &nbsp;
-interface TaskCardProps {
-  task: Task;
-  onDelete: (id: string) =&gt; void;
-}
+export function SearchTaskScreen() {
+  const insets = useSafeAreaInsets();
+  const { status, results, search } = useSearchTasks();
 &nbsp;
-export function TaskCard({ task, onDelete }: TaskCardProps) {
-  const done = task.status === 'completed';
   return (
     &lt;View
-      accessible
-      accessibilityRole="button"
-      className="mb-2 rounded-lg border border-gray-200 bg-white p-4"
+      className="flex-1 gap-4 bg-gray-50 p-4"
+      style={{ paddingTop: insets.top + 16, paddingBottom: insets.bottom + 16 }}
     &gt;
-      &lt;Text className="text-base font-semibold text-gray-900"&gt;{task.title}&lt;/Text&gt;
-      &lt;Text className={`mt-1 text-sm ${done ? 'text-green-600' : 'text-gray-500'}`}&gt;
-        {done ? '✓ Completada' : '○ Pendiente'}
-      &lt;/Text&gt;
-      &lt;Pressable
-        onPress={() =&gt; onDelete(task.id)}
-        accessibilityLabel={`Eliminar tarea ${task.title}`}
-        // ==== Actividad 3: testID agregado para selección confiable en Maestro ====
-        testID={`btn-eliminar-${task.id}`}
-      &gt;
-        &lt;Text className="mt-2 text-sm font-medium text-red-600"&gt;Eliminar&lt;/Text&gt;
-      &lt;/Pressable&gt;
+      &lt;Text className="text-2xl font-bold text-gray-900"&gt;Buscar tareas&lt;/Text&gt;
+      &lt;SearchBar onSearch={search} /&gt;
+&nbsp;
+      {status === 'error' &amp;&amp; (
+        &lt;Text className="rounded-lg bg-red-100 px-4 py-3 text-sm font-medium text-red-800"&gt;
+          Error al buscar tareas
+        &lt;/Text&gt;
+      )}
+&nbsp;
+      {status === 'success' &amp;&amp; results.length === 0 &amp;&amp; (
+        &lt;Text className="rounded-lg bg-gray-100 px-4 py-3 text-sm font-medium text-gray-600"&gt;
+          No se encontraron tareas
+        &lt;/Text&gt;
+      )}
+&nbsp;
+      &lt;FlatList
+        data={results}
+        keyExtractor={(item) =&gt; item.id}
+        renderItem={({ item }) =&gt; &lt;SearchResultCard task={item} /&gt;}
+      /&gt;
     &lt;/View&gt;
   );
 }

@@ -27,6 +27,7 @@ export function TaskForm({ onSubmit }: TaskFormProps) {
       <Pressable
         onPress={handleSubmit}
         accessibilityRole="button"
+        accessibilityLabel="Guardar tarea"
         className="rounded-lg bg-blue-600 py-3 active:bg-blue-700"
       >
         <Text className="text-center text-base font-semibold text-white">Guardar</Text>

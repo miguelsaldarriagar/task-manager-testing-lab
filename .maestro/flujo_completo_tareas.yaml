@@ -1,7 +1,10 @@
 appId: com.taskmanager.app
 ---
+# ==== Actividad 3: se agrega grabación automática de evidencia ====
 # 1. Abrir la app y verificar la pantalla principal
-- launchApp
+- launchApp:
+    clearState: true
+- startRecording: evidencia_flujo_completo
 - assertVisible: "Nueva tarea"
 
 # 2. Intentar guardar vacío no muestra confirmación
@@ -16,3 +19,4 @@ appId: com.taskmanager.app
 
 # 4. Verificar confirmación de creación
 - assertVisible: "Tarea creada exitosamente"
+- stopRecording

@@ -1,0 +1,22 @@
+appId: com.taskmanager.app
+---
+# ==== Actividad 3: flujo E2E sobre la funcionalidad nueva de búsqueda ====
+- launchApp:
+    clearState: true
+- startRecording: evidencia_buscar_tarea
+- assertVisible: "Nueva tarea"
+
+# Navegar a la pantalla de búsqueda
+- tapOn: "Buscar tareas"
+- assertVisible: "Buscar tareas"
+
+# Buscar un término con resultados
+- tapOn:
+    id: "input-busqueda"
+- inputText: "Comprar"
+- tapOn:
+    id: "btn-buscar"
+- assertVisible: "Comprar leche"
+- assertVisible: "Comprar pan"
+
+- stopRecording

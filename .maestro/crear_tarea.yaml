@@ -1,9 +1,14 @@
 appId: com.taskmanager.app
 ---
-- launchApp
+# ==== Actividad 3: evidencia con capturas automáticas de Maestro ====
+- launchApp:
+          clearState: true
+- takeScreenshot: 01_pantalla_inicial
 - assertVisible: "Nueva tarea"
 - tapOn:
-    id: "input-titulo"
+          id: "input-titulo"
 - inputText: "Mi primera tarea de prueba"
+- takeScreenshot: 02_titulo_escrito
 - tapOn: "Guardar"
-- assertVisible: "Tarea creada exitosamente"
+- assertVisible: "Error al crear la tarea"
+- takeScreenshot: 03_error_mostrado

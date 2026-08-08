@@ -22,6 +22,8 @@ export function TaskCard({ task, onDelete }: TaskCardProps) {
       <Pressable
         onPress={() => onDelete(task.id)}
         accessibilityLabel={`Eliminar tarea ${task.title}`}
+        // ==== Actividad 3: testID agregado para selección confiable en Maestro ====
+        testID={`btn-eliminar-${task.id}`}
       >
         <Text className="mt-2 text-sm font-medium text-red-600">Eliminar</Text>
       </Pressable>

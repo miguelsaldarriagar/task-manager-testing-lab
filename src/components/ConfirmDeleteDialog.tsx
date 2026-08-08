@@ -24,10 +24,12 @@ export function ConfirmDeleteDialog({
             se puede deshacer.
           </Text>
           <View className="mt-5 flex-row justify-end gap-3">
+            {/* ==== Actividad 3: testID agregados para selección confiable en Maestro ==== */}
             <Pressable
               onPress={onCancel}
               accessibilityRole="button"
               accessibilityLabel="Cancelar"
+              testID="btn-cancelar-eliminar"
               className="rounded-lg px-4 py-2 active:bg-gray-100"
             >
               <Text className="text-base font-medium text-gray-600">Cancelar</Text>
@@ -36,6 +38,7 @@ export function ConfirmDeleteDialog({
               onPress={onConfirm}
               accessibilityRole="button"
               accessibilityLabel="Confirmar eliminación"
+              testID="btn-confirmar-eliminar"
               className="rounded-lg bg-red-600 px-4 py-2 active:bg-red-700"
             >
               <Text className="text-base font-semibold text-white">Eliminar</Text>
