@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1786135230267" clover="3.2.0">
-  <project timestamp="1786135230268" name="All files">
+<coverage generated="1787103492020" clover="3.2.0">
+  <project timestamp="1787103492020" name="All files">
     <metrics statements="102" coveredstatements="96" conditionals="56" coveredconditionals="49" methods="46" coveredmethods="42" elements="204" coveredelements="187" complexity="0" loc="102" ncloc="102" packages="7" files="17" classes="17"/>
     <package name="src">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -108,8 +108,8 @@
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="taskSchema.ts" path="C:\dev\tmt\src\schemas\taskSchema.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.screens">

@@ -25,3 +25,12 @@ jobs:
 
       - name: Ejecutar pruebas con cobertura
         run: npx jest --coverage --ci
+
+      # ==== Actividad 4: paso agregado — publicar el reporte de cobertura ====
+      - name: Publicar reporte de cobertura
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
+          retention-days: 14
