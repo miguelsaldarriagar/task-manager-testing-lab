@@ -12,7 +12,8 @@ export function useCreateTask() {
       const task = await createTask(title);
       setTasks((prev) => [task, ...prev]);
       setStatus('success');
-    } catch {
+    } catch (err) {
+      console.error('ERROR REAL AL CREAR TAREA:', err);
       setStatus('error');
     }
   };

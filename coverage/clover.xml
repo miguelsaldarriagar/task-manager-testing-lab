@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1787103492020" clover="3.2.0">
-  <project timestamp="1787103492020" name="All files">
-    <metrics statements="102" coveredstatements="96" conditionals="56" coveredconditionals="49" methods="46" coveredmethods="42" elements="204" coveredelements="187" complexity="0" loc="102" ncloc="102" packages="7" files="17" classes="17"/>
+<coverage generated="1787187948117" clover="3.2.0">
+  <project timestamp="1787187948117" name="All files">
+    <metrics statements="106" coveredstatements="100" conditionals="56" coveredconditionals="49" methods="47" coveredmethods="43" elements="209" coveredelements="192" complexity="0" loc="106" ncloc="106" packages="7" files="18" classes="18"/>
     <package name="src">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="types.ts" path="C:\dev\tmt\src\types.ts">
@@ -49,7 +49,7 @@
       </file>
     </package>
     <package name="src.hooks">
-      <metrics statements="41" coveredstatements="41" conditionals="4" coveredconditionals="4" methods="20" coveredmethods="20"/>
+      <metrics statements="42" coveredstatements="42" conditionals="4" coveredconditionals="4" methods="20" coveredmethods="20"/>
       <file name="useCounter.ts" path="C:\dev\tmt\src\hooks\useCounter.ts">
         <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="6" coveredmethods="6"/>
         <line num="4" count="9" type="stmt"/>
@@ -59,7 +59,7 @@
         <line num="10" count="9" type="stmt"/>
       </file>
       <file name="useCreateTask.ts" path="C:\dev\tmt\src\hooks\useCreateTask.ts">
-        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
         <line num="6" count="20" type="stmt"/>
         <line num="7" count="20" type="stmt"/>
         <line num="9" count="20" type="stmt"/>
@@ -69,9 +69,10 @@
         <line num="13" count="6" type="stmt"/>
         <line num="14" count="6" type="stmt"/>
         <line num="16" count="2" type="stmt"/>
-        <line num="20" count="20" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="24" count="20" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="21" count="20" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="25" count="20" type="stmt"/>
       </file>
       <file name="useSearchTasks.ts" path="C:\dev\tmt\src\hooks\useSearchTasks.ts">
         <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -105,11 +106,17 @@
       </file>
     </package>
     <package name="src.schemas">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="searchSchema.ts" path="C:\dev\tmt\src\schemas\searchSchema.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+      </file>
       <file name="taskSchema.ts" path="C:\dev\tmt\src\schemas\taskSchema.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.screens">
